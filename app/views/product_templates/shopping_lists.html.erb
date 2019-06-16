@@ -1,0 +1,118 @@
+<html>
+<head>
+<style>
+body {
+       background-color: #8E44AD;
+       
+}
+h1 {
+        color: #FFffFF;
+}
+h2 {
+        color: #FFFFFF;
+}
+
+h3 {
+        color: #FFFFFF;
+}
+</style>
+</head>
+<body>
+ 
+<h1><center>My Skincare Cabinet</center></h1>
+ 
+ 
+
+
+<h1>
+  Shopping list
+ 
+</h1>
+
+<h2> Here is a lists of all your products which will be expiring soon. Make sure to repurchase! </h2>
+
+
+<hr>
+
+<table>
+  <tr>
+    <th>
+      ID
+    </th>
+
+    <th>
+      Name
+    </th>
+
+    <th>
+      Brand
+    </th>
+
+    <th>
+      Expiration date
+    </th>
+
+    <th>
+      Product type
+    </th>
+
+    <th>
+      Owner
+    </th>
+
+    <th>
+      Created at
+    </th>
+
+    <th>
+      Updated at
+    </th>
+
+    <th>
+    </th>
+  </tr>
+
+  <% @products.each do |product| %>
+  <tr>
+    <td>
+      <%= product.id %>
+    </td>
+
+    <td>
+      <%= product.name %>
+    </td>
+
+    <td>
+      <%= product.brand %>
+    </td>
+
+    <td>
+      <%= product.expiration_date %>
+    </td>
+
+    <td>
+      <%= product.product_type %>
+    </td>
+
+    <td>
+      <%= product.owner_id %>
+    </td>
+
+    <td>
+      <%= time_ago_in_words(product.created_at) %> ago
+    </td>
+
+    <td>
+      <%= time_ago_in_words(product.updated_at) %> ago
+    </td>
+
+    <td>
+      <a href="/products/<%= product.id %>">
+        Show details
+      </a>
+    </td>
+  </tr>
+  <% end %>
+</table>
+</body>
+</html>

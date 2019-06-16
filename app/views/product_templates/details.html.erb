@@ -1,0 +1,101 @@
+<html>
+<head>
+<style>
+body {
+       background-color: #8E44AD;
+       
+}
+h1 {
+        color: #FFffFF;
+}
+h2 {
+        color: #FFFFFF;
+}
+
+h3 {
+        color: #FFFFFF;
+}
+</style>
+</head>
+<body>
+ 
+<h1><center>My Skincare Cabinet</center></h1>
+ 
+
+<h1>
+  Product #<%= @product.id %> details
+</h1>
+
+<div>
+  <div>
+    <a href="/products">
+      Go back
+    </a>
+  </div>
+
+  <div>
+    <a href="/existing_product_form/<%= @product.id %>">
+      Edit product
+    </a>
+  </div>
+
+  <div>
+    <a href="/delete_product/<%= @product.id %>">
+      Delete product
+    </a>
+  </div>
+</div>
+
+<dl>
+  <dt>
+    Name
+  </dt>
+  <dd>
+    <%= @product.name %>
+  </dd>
+
+  <dt>
+    Brand
+  </dt>
+  <dd>
+    <%= @product.brand %>
+  </dd>
+
+  <dt>
+    Expiration date
+  </dt>
+  <dd>
+    <%= @product.expiration_date %>
+  </dd>
+
+  <dt>
+    Product type
+  </dt>
+  <dd>
+    <%= @product.product_type %>
+  </dd>
+
+  <dt>
+    Owner
+  </dt>
+  <dd>
+    <%= @product.owner_id %>
+  </dd>
+
+  <dt>
+    Created at
+  </dt>
+  <dd>
+    <%= time_ago_in_words(@product.created_at) %> ago
+  </dd>
+
+  <dt>
+    Updated at
+  </dt>
+  <dd>
+    <%= time_ago_in_words(@product.updated_at) %> ago
+  </dd>
+</dl>
+</body>
+</html>
+
